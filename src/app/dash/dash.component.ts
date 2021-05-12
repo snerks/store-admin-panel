@@ -1,7 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { map } from "rxjs/operators";
 import { Breakpoints, BreakpointObserver } from "@angular/cdk/layout";
-// import { StoreSummaryService } from '../store-summary/store-summary.service';
 import { StoreSummary } from "../store-summary/store-summary";
 import { StoreSummaryService } from "../store-summary/store-summary.service";
 
@@ -16,7 +15,7 @@ export class DashComponent implements OnInit{
     map(({ matches }) => {
       if (matches) {
         return {
-          columns: 1,
+          columns: 4,
           miniCard: { cols: 1, rows: 1 },
           chart: { cols: 1, rows: 2 },
           table: { cols: 1, rows: 4 },
