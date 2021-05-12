@@ -1,24 +1,27 @@
 <div class="grid-container">
   <h1 class="mat-h1">Dashboard</h1>
+  <!-- <pre *ngIf="cardLayout">{{ cardLayout.columns | json }}</pre> -->
   <mat-grid-list cols="{{ (cardLayout | async)?.columns }}" rowHeight="200px">
-    <!--Mini Cards-->
     <mat-grid-tile
       *ngFor="let mc of miniCardData"
       [colspan]="(cardLayout | async)?.miniCard.cols"
       [rowspan]="(cardLayout | async)?.miniCard.rows"
     >
-      <app-mini-card
-        [icon]="mc.icon"
-        [title]="mc.title"
-        [value]="mc.value"
-        [color]="mc.color"
-        [isIncrease]="mc.isIncrease"
-        duration="since last month"
-        [percentValue]="mc.percentValue"
-        [isCurrency]="mc.isCurrency"
-      ></app-mini-card>
+      <div>
+        <p>{{ cardLayout.breakpoint }}</p>
+        <app-mini-card
+          [icon]="mc.icon"
+          [title]="mc.title"
+          [value]="mc.value"
+          [color]="mc.color"
+          [isIncrease]="mc.isIncrease"
+          duration="since last month"
+          [percentValue]="mc.percentValue"
+          [isCurrency]="mc.isCurrency"
+        ></app-mini-card>
+      </div>
     </mat-grid-tile>
-    <!--Charts-->
+
     <mat-grid-tile
       [colspan]="(cardLayout | async)?.chart.cols"
       [rowspan]="(cardLayout | async)?.chart.rows"
@@ -51,7 +54,7 @@
         <app-store-sessions-chart></app-store-sessions-chart>
       </app-card>
     </mat-grid-tile>
-    <!--Table-->
+
     <mat-grid-tile
       [colspan]="(cardLayout | async)?.table.cols"
       [rowspan]="(cardLayout | async)?.table.rows"

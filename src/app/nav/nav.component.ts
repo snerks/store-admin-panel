@@ -19,6 +19,6 @@ export class NavComponent {
   constructor(private breakpointObserver: BreakpointObserver) { }
 
   // nav.component.ts
-  menuItems = ["dashboard", "sales", "orders", "customers", "products"];
+  menuItems = ["dashboard", "sales" /*, "orders", "customers", "products" */];
 
 }

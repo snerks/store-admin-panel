@@ -15,7 +15,8 @@ export class DashComponent implements OnInit{
     map(({ matches }) => {
       if (matches) {
         return {
-          columns: 4,
+          breakpoint: "Handset",
+          columns: 1,
           miniCard: { cols: 1, rows: 1 },
           chart: { cols: 1, rows: 2 },
           table: { cols: 1, rows: 4 },
@@ -23,9 +24,10 @@ export class DashComponent implements OnInit{
       }
 
       return {
+        breakpoint: "Not Handset",
         columns: 4,
         miniCard: { cols: 1, rows: 1 },
-        chart: { cols: 2, rows: 2 },
+        chart: { cols: 1, rows: 2 },
         table: { cols: 4, rows: 4 },
       };
     })
